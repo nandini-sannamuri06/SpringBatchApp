@@ -7,7 +7,7 @@ import org.springframework.web.client.RestTemplate;
 @Component
 public class BatchScheduling {
 	
-	@Scheduled(cron="0 0/5 * ? * *")
+	@Scheduled(cron="*/2 30 16 * * *")
 	public void scheduleJob(){
 		RestTemplate restTemplate = new RestTemplate();
 		restTemplate.getForEntity("http://localhost:8076/launchScheduleJob", String.class);
